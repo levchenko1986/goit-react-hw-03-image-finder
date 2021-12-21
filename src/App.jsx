@@ -64,13 +64,12 @@ class App extends Component {
   };
 
   render() {
-    const { loading, images, error, imgUrl } = this.state;
+    const { loading, images, imgUrl } = this.state;
     const showButton = images.length >= 12 && !loading;
 
     return (
       <div className="App">
         <Searchbar onSubmit={this.searchImages} />
-        {error && <p>{error.message}</p>}
         {images.length > 0 && (
           <ImageGallery toOpen={this.openModal} list={images} />
         )}
